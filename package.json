@@ -1,0 +1,26 @@
+{
+  "name": "webpack-starter",
+  "version": "1.0.0",
+  "description": "sandbox for webpack learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leachuk/webpack-starter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leachuk/webpack-starter/issues"
+  },
+  "homepage": "https://github.com/leachuk/webpack-starter#readme",
+  "devDependencies": {
+    "webpack": "^2.2.0-rc.4"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
