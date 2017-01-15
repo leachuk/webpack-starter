@@ -1,2 +1,4 @@
 # webpack-starter
-sandbox for webpack learning
+Sandbox for webpack learning
+
+Created from [Webpack official getting started](https://webpack.js.org/get-started/)
