@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<title>RecruitUnit - Homepage</title>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+		<base href="/">
+
+		<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+		<link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
+		<link rel="stylesheet" href="src/css/global.css"/>
+	</head>
+
+	<body ng-app="recruitUnitApp" ng-controller="AppController as app" layout="column" ng-init="app.initApp()">
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<md-button class="md-icon-button" aria-label="Settings">
+					<md-icon ng-click="app.toggleSideNav()" md-svg-icon="navigation:menu"></md-icon>
+				</md-button>
+
+				<div ng-if="app.user.isLoggedIn" ng-cloak layout="row" layout-align="end center" flex>
+					<span hide show-gt-xs>{{app.user.email | limitTo:40}}</span>
+					<span hide-gt-xs class="username-xs">{{app.user.email | limitTo:21}}</span>
+					<md-button ng-click="app.signOutUser()">Logout</md-button>
+				</div>
+				<div ng-if="!app.user.isLoggedIn" ng-cloak layout="row" layout-align="end center" flex>
+					<form ng-submit="app.signInUser()" class="recruitunit-login" layout="row" layout-align="end center" flex>
+						<div>
+							<md-input-container flex>
+								<label>Email</label>
+								<input ng-model="app.user.email"
+									   type="text">
+							</md-input-container>
+						</div>
+						<div>
+							<md-input-container flex>
+								<label>Password</label>
+								<input ng-model="app.user.password"
+									   type="password">
+							</md-input-container>
+						</div>
+						<div>
+							<md-button type="submit">Login</md-button>
+						</div>
+					</form>
+				</div>
+
+			</div>
+			<div layout="row" layout-align="end center" ng-if="app.submitmessage" ng-cloak>
+				<div>{{app.submitmessage}}</div>
+			</div>
+		</md-toolbar>
+		<md-content flex>
+			<div layout="vertical" flex>
+				<md-sidenav
+					md-component-id="sidenav-main"
+					md-is-locked-open="false"
+					md-whiteframe="4">
+					<md-content layout-padding>
+						<section layout="column" layout-align="center start">
+							<md-list>
+								<md-button ng-href="/user/{{app.user.email}}" ng-click="app.toggleSideNav()" class="md-primary">
+									<md-icon md-svg-icon="action:home"></md-icon>
+									Home
+								</md-button>
+								<md-button ng-href="/user/{{app.user.email}}/comparisonrules" ng-click="app.toggleSideNav()" ng-if="app.user.isDeveloper" class="md-primary">
+									<md-icon md-svg-icon="av:playlist_add_check"></md-icon>
+									Configure Test Rules
+								</md-button>
+								<md-button ng-href="/#" ng-click="app.toggleSideNav()" class="md-primary">
+									<md-icon md-svg-icon="action:settings"></md-icon>
+									Settings
+								</md-button>
+							</md-list>
+						</section>
+					</md-content>
+				</md-sidenav>
+
+				<div ng-viewport flex></div>
+			</div>
+		</md-content>
+
+		<!--Angular -->
+		<script type="text/javascript" src="./bower_components/angular2/angular.js"></script>
+		<script type="text/javascript" src="./bower_components/angular-cookies/angular-cookies.js"></script>
+		<script type="text/javascript" src="./bower_components/angular-new-router/dist/router.es5.min.js"></script>
+
+		<!--Angular Material-->
+		<script type="text/javascript" src="./bower_components/angular-animate/angular-animate.js"></script>
+		<script type="text/javascript" src="./bower_components/angular-aria/angular-aria.js"></script>
+		<script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+
+		<!--Loom API-->
+		<script type="text/javascript" src="./bower_components/angular-resource/angular-resource.js"></script>
+		<script type="text/javascript" src="./bower_components/loom-api-angular/loom.api.ng.1.1.1.js"></script>
+
+		<!--Misc Angular Libs-->
+		<script type="text/javascript" src="./bower_components/ng-lodash/build/ng-lodash.min.js"></script>
+		<script type="text/javascript" src="./bower_components/moment/min/moment.min.js"></script>
+		<script type="text/javascript" src="./bower_components/angular-moment/angular-moment.min.js"></script>
+		<script type="text/javascript" src="./bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
+
+		<!--Application-->
+		<script type="text/javascript" src="./src/angular/recruitUnitApp.js"></script>
+		<script type="text/javascript" src="./src/angular/components/home/home.js"></script>
+		<script type="text/javascript" src="./src/angular/components/home/HomeController.js"></script>
+
+		<script type="text/javascript" src="./src/angular/components/userLanding/userLanding.js"></script>
+		<script type="text/javascript" src="./src/angular/components/userLanding/UserLandingController.js"></script>
+
+		<!-- Application Services -->
+		<script type="text/javascript" src="./src/angular/services/recruitunit.util.js"></script>
+	</body>
+</html>

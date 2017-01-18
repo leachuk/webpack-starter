@@ -1,0 +1,132 @@
+.table {
+	background: #e8ebff;
+}
+.table .header{
+	background: #3F51B5;
+}
+
+.row {
+  box-sizing: border-box;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.cell {
+  display: table-cell;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+@supports ((display: -webkit-box) or (display: -webkit-flex) or (display: -ms-flexbox) or (display: flex)) {
+  .row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .cell {
+    display: block;
+  }
+
+  .cell-valign-middle,
+  .cell-valign-bottom {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+.cell-min {
+  width: 1%;
+  -webkit-box-flex: 0;
+  -webkit-flex: none auto;
+      -ms-flex: none auto;
+          flex: none auto;
+}
+
+.cell-max {
+  width: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 100%;
+      -ms-flex: 1 100%;
+          flex: 1 100%;
+}
+
+.row {
+  border-collapse: seperate;
+  border-spacing: 8px 0;
+  padding: 4px;
+}
+
+.cell {
+  border-radius: 2px;
+  /*background: rgba(136, 136, 136, 0.85);*/
+  background: #ced3ef;
+  margin-right: 8px;
+  padding: 6px;
+}
+
+.cell.cell-nowrap {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.cell.cell-valign-middle {
+  vertical-align: middle;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.cell.cell-valign-bottom {
+  vertical-align: bottom;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.cell.cell-align-center {
+  text-align: center;
+}
+
+.cell.cell-align-right {
+  text-align: right;
+}
+
+.cell.cell-80px {
+  -webkit-box-flex: 0;
+  -webkit-flex: none;
+      -ms-flex: none;
+          flex: none;
+  width: 80px;
+  max-width: 80px;
+}
+.cell.cell-100px {
+  -webkit-box-flex: 0;
+  -webkit-flex: none;
+      -ms-flex: none;
+          flex: none;
+  width: 100px;
+  max-width: 100px;
+}
+.cell.cell-120px {
+  -webkit-box-flex: 0;
+  -webkit-flex: none;
+      -ms-flex: none;
+          flex: none;
+  width: 120px;
+  max-width: 120px;
+}
+

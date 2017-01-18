@@ -1,0 +1,26 @@
+{
+  "name": "loom-api-angular",
+  "version": "1.1.1",
+  "homepage": "https://github.com/leachuk/loom-api-angular",
+  "authors": [
+    "leachuk <stew.leach@gmail.com>"
+  ],
+  "description": "Angular factory implementation of the Loom server API",
+  "main": "loom.api.ng.1.1.1.js",
+  "dependencies": {
+    "angular": ">=1.5.*",
+    "angular-resource": ">=1.5.*"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "angular",
+    "loom",
+    "api"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ]
+}

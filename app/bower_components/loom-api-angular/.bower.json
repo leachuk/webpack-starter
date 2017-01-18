@@ -1,0 +1,35 @@
+{
+  "name": "loom-api-angular",
+  "version": "1.1.1",
+  "homepage": "https://github.com/leachuk/loom-api-angular",
+  "authors": [
+    "leachuk <stew.leach@gmail.com>"
+  ],
+  "description": "Angular factory implementation of the Loom server API",
+  "main": "loom.api.ng.1.1.1.js",
+  "dependencies": {
+    "angular": ">=1.5.*",
+    "angular-resource": ">=1.5.*"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "angular",
+    "loom",
+    "api"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "_release": "1.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.1.1",
+    "commit": "e6362c18f8aa022a88394b4ebb3b384359f13b0f"
+  },
+  "_source": "https://github.com/leachuk/loom-api-angular.git",
+  "_target": "1.1.1",
+  "_originalSource": "loom-api-angular"
+}
